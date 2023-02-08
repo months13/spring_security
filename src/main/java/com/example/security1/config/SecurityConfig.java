@@ -31,11 +31,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("user1")
-                .password("$2a$10$0r.4m0dMC8w5AIT9lYGNZuN6ChyxMVG9dd5VIfFfuPvP/eM/NkK.y")
-                .roles("USER"); // roles는 사용자가 가지는 권한. 이 부분을 지우면 패스워드 생성된다..
-                // 여기서 user는 role_user와 같은 역할.. user를 상수처럼 사용하는게 포인트..
-    }
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.inMemoryAuthentication().withUser("user1")
+//                .password("$2a$10$0r.4m0dMC8w5AIT9lYGNZuN6ChyxMVG9dd5VIfFfuPvP/eM/NkK.y")
+//                .roles("USER"); // roles는 사용자가 가지는 권한. 이 부분을 지우면 패스워드 생성된다..
+//                // 여기서 user는 role_user와 같은 역할.. user를 상수처럼 사용하는게 포인트..
+//    }
+    /**
+     * UserDetailsService가 빈으로 등록되면 이걸 쓸 필요가 없음
+     */
 }
